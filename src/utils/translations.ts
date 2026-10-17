@@ -22,8 +22,8 @@ export const translations = {
 
     // Hero
     heroBadge: 'High Volume Content & Performance Agency',
-    heroTitleLine1: 'Schaal je merk',
-    heroTitleLine2: 'naar de top.',
+    heroTitleLine1: 'Schaal je marketing',
+    heroTitleLine2: 'naar de Top.',
     heroSubtitle:
       "Wij bouwen dominante merken voor marktleiders. Van high volume videoproductie (8 tot 20 video's p/m) en speciale shoots tot volledig social management, websites en webshops.",
     heroCtaPackages: 'Bekijk Onze Pakketten',
@@ -210,8 +210,8 @@ export const translations = {
 
     // Hero
     heroBadge: 'High Volume Content & Performance Agency',
-    heroTitleLine1: 'Scale your brand',
-    heroTitleLine2: 'to the absolute top.',
+    heroTitleLine1: 'Scale your marketing',
+    heroTitleLine2: 'to the Top.',
     heroSubtitle:
       'We build dominant brands for market leaders. From high volume video production (8 to 20 videos /mo) and special shoots to full social management, custom websites and e commerce webshops.',
     heroCtaPackages: 'View Our Packages',
