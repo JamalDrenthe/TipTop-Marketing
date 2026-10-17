@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { TipTopLogo } from './TipTopLogo.tsx';
 import { useLanguage } from '../context/LanguageContext.tsx';
-import { Sparkles, RefreshCw } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 interface SparkleParticle {
   id: number;
@@ -14,7 +14,6 @@ interface SparkleParticle {
 
 export const InteractiveHeroLogo: React.FC = () => {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
   const [sparkles, setSparkles] = useState<SparkleParticle[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
   const { language } = useLanguage();
@@ -69,7 +68,6 @@ export const InteractiveHeroLogo: React.FC = () => {
 
   const handleFlip = () => {
     setIsFlipped((prev) => !prev);
-    setHasInteracted(true);
     triggerSparkles();
   };
 
@@ -222,21 +220,6 @@ export const InteractiveHeroLogo: React.FC = () => {
           ))}
         </AnimatePresence>
       </div>
-
-      {/* Interactive Micro Pill Instruction */}
-      <motion.div
-        animate={hasInteracted ? {} : { y: [0, -3, 0] }}
-        transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-        onClick={handleFlip}
-        className="mt-3 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#C6A868]/50 text-zinc-300 hover:text-white transition-all cursor-pointer text-[10px] uppercase tracking-wider font-semibold group"
-      >
-        <RefreshCw className="w-3 h-3 text-[#C6A868] group-hover:rotate-180 transition-transform duration-500" />
-        <span>
-          {isFlipped
-            ? (isEn ? 'Tap to view logo' : 'Tik om logo te bekijken')
-            : (isEn ? 'Interactive · Tap to flip' : 'Interactief · Tik om te draaien')}
-        </span>
-      </motion.div>
     </div>
   );
 };
