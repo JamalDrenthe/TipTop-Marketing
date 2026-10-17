@@ -22,7 +22,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   const navLinks = [
     { id: 'home', label: t('navHome') },
     { id: 'pakketten', label: t('navPackages') },
-    { id: 'portfolio', label: t('navPortfolio') },
     { id: 'contact', label: t('navContact') }
   ];
 

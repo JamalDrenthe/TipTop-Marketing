@@ -4,16 +4,14 @@ import { ThemeProvider } from './context/ThemeContext.tsx';
 import { Navbar } from './components/Navbar.tsx';
 import { HomePage } from './components/HomePage.tsx';
 import { PricingPage } from './components/PricingPage.tsx';
-import { PortfolioPage } from './components/PortfolioPage.tsx';
 import { ContactPage } from './components/ContactPage.tsx';
 import { Footer } from './components/Footer.tsx';
 import { StrategyModal } from './components/StrategyModal.tsx';
-import { CaseStudyModal } from './components/CaseStudyModal.tsx';
 import { LegalModal } from './components/LegalModal.tsx';
 import { PageTransition } from './components/PageTransition.tsx';
 import { ScrollProgressBar } from './components/ScrollProgressBar.tsx';
-import { SkeletonHero, SkeletonPricing, SkeletonPortfolio } from './components/SkeletonLoader.tsx';
-import { PackageTier, PortfolioItem } from './utils/pricing.ts';
+import { SkeletonHero, SkeletonPricing } from './components/SkeletonLoader.tsx';
+import { PackageTier } from './utils/pricing.ts';
 import { CustomCursor } from './components/CustomCursor.tsx';
 
 function AppContent() {
@@ -22,7 +20,6 @@ function AppContent() {
   const [selectedPackageForContact, setSelectedPackageForContact] = useState<PackageTier | ''>('');
   const [strategyModalOpen, setStrategyModalOpen] = useState<boolean>(false);
   const [preselectedStrategyTier, setPreselectedStrategyTier] = useState<PackageTier | undefined>(undefined);
-  const [selectedCaseItem, setSelectedCaseItem] = useState<PortfolioItem | null>(null);
   const [legalModalType, setLegalModalType] = useState<'voorwaarden' | 'privacy' | null>(null);
 
   // Scroll to top on navigation change & trigger subtle skeleton load transition
@@ -59,9 +56,6 @@ function AppContent() {
       if (activePage === 'pakketten') {
         return <SkeletonPricing />;
       }
-      if (activePage === 'portfolio') {
-        return <SkeletonPortfolio />;
-      }
     }
 
     switch (activePage) {
@@ -78,13 +72,6 @@ function AppContent() {
           <PricingPage
             onSelectPackage={handleSelectPackage}
             onOpenStrategyModal={handleOpenStrategyModal}
-          />
-        );
-      case 'portfolio':
-        return (
-          <PortfolioPage
-            onSelectCase={(item) => setSelectedCaseItem(item)}
-            onOpenStrategyModal={() => handleOpenStrategyModal()}
           />
         );
       case 'contact':
@@ -139,12 +126,6 @@ function AppContent() {
         isOpen={strategyModalOpen}
         onClose={() => setStrategyModalOpen(false)}
         preselectedTier={preselectedStrategyTier}
-      />
-
-      <CaseStudyModal
-        item={selectedCaseItem}
-        onClose={() => setSelectedCaseItem(null)}
-        onSelectPackage={handleSelectPackage}
       />
 
       <LegalModal

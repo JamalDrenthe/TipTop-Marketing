@@ -6,13 +6,12 @@ Officiële website voor **TipTop Marketing**: een high-end marketingbureau gespe
 
 - **High-End Merkidentiteit:** Minimalistisch zwart-wit design met subtiele metallic gouden accenten (`#C6A868`), serif koppen (*Playfair Display* & *Cormorant Garamond*) en strakke sans-serif bodytekst (*Plus Jakarta Sans*).
 - **Interactieve Pakketten & Prijzen:** Duidelijk overzicht en vergelijking van de **PLATINUM**, **PREMIUM** en **GOAT** retainers inclusief interactieve pakket-aanbeveler.
-- **Portfolio & Case Studies:** Filterbare case studies (High-Volume Video, Special Shoots, Websites & Webshops) met gedetailleerde modale weergaves en resultaatmetrieken.
 - **Meertalig (NL / EN):** Directe taalschakelaar in de navigatiebalk voor volledige Nederlandse en Engelse ondersteuning.
 - **Light & Dark Mode:** Dynamische thema-switcher in de navigatiebalk.
 - **Premium Motion & Interactie:**
   - *Framer Motion* scroll-triggered reveal animaties en paginatransities
   - Gouden scroll-progressiebalk bovenaan het scherm
-  - Custom interactieve cursor-volger met 'VIEW' transformatie op portfolio-items
+  - Custom interactieve cursor-volger
   - Directe 30-minuten strategiegesprek planner en gevalideerd contactformulier
 
 ## 🛠️ Tech Stack

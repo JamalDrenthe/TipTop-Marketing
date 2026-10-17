@@ -62,33 +62,3 @@ export const SkeletonPricing: React.FC = () => {
   );
 };
 
-export const SkeletonPortfolio: React.FC = () => {
-  return (
-    <div className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="space-y-4 mb-12">
-        <div className="h-6 w-36 bg-zinc-200 dark:bg-zinc-800 rounded-full animate-pulse" />
-        <div className="h-12 w-64 bg-zinc-200 dark:bg-zinc-800 rounded-2xl animate-pulse" />
-        <div className="flex gap-2 pt-4">
-          {[1, 2, 3, 4].map((n) => (
-            <div key={n} className="h-9 w-28 bg-zinc-200 dark:bg-zinc-800 rounded-full animate-pulse" />
-          ))}
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[1, 2, 3, 4, 5, 6].map((i) => (
-          <div key={i} className="aspect-[4/5] rounded-3xl bg-zinc-900 animate-pulse border border-zinc-800 p-6 flex flex-col justify-between">
-            <div className="flex justify-between">
-              <div className="h-6 w-24 bg-white/10 rounded-full" />
-              <div className="h-8 w-8 bg-white/10 rounded-full" />
-            </div>
-            <div className="space-y-2">
-              <div className="h-4 w-20 bg-[#C6A868]/30 rounded-full" />
-              <div className="h-6 w-48 bg-white/20 rounded-xl" />
-              <div className="h-4 w-full bg-white/10 rounded-full" />
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
