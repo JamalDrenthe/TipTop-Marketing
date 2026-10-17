@@ -104,7 +104,7 @@ export const translations = {
     tableRowSelect: 'Direct Pakket Kiezen',
 
     // Portfolio Section
-    portfolioTag: '03. Recente Producties',
+    portfolioTag: 'Recente Producties & Cases',
     portfolioTitle: 'Werk dat',
     portfolioTitleItalic: 'voor zich spreekt.',
     portfolioSubtitle:
@@ -292,7 +292,7 @@ export const translations = {
     tableRowSelect: 'Select Package Directly',
 
     // Portfolio Section
-    portfolioTag: '03. Featured Production Work',
+    portfolioTag: 'Featured Production Work & Cases',
     portfolioTitle: 'Work that',
     portfolioTitleItalic: 'speaks for itself.',
     portfolioSubtitle:

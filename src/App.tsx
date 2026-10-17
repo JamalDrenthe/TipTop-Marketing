@@ -71,7 +71,6 @@ function AppContent() {
             onNavigate={handleNavigate}
             onSelectPackage={handleSelectPackage}
             onOpenStrategyModal={handleOpenStrategyModal}
-            onSelectCase={(item) => setSelectedCaseItem(item)}
           />
         );
       case 'pakketten':
@@ -101,7 +100,6 @@ function AppContent() {
             onNavigate={handleNavigate}
             onSelectPackage={handleSelectPackage}
             onOpenStrategyModal={handleOpenStrategyModal}
-            onSelectCase={(item) => setSelectedCaseItem(item)}
           />
         );
     }

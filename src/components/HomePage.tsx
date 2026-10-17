@@ -1,22 +1,20 @@
 import React from 'react';
 import { TipTopLogo } from './TipTopLogo.tsx';
-import { PACKAGES, PORTFOLIO_ITEMS, PackageTier, PortfolioItem } from '../utils/pricing.ts';
+import { PACKAGES, PackageTier } from '../utils/pricing.ts';
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn.tsx';
 import { useLanguage } from '../context/LanguageContext.tsx';
-import { ArrowRight, Sparkles, Video, Camera, Globe, Share2, Wand2, Laptop, Check, Crown, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, Sparkles, Video, Share2, Wand2, Laptop, Check, Crown } from 'lucide-react';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
   onSelectPackage: (tier: PackageTier) => void;
   onOpenStrategyModal: (preselectedTier?: PackageTier) => void;
-  onSelectCase?: (item: PortfolioItem) => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
   onNavigate,
   onSelectPackage,
   onOpenStrategyModal,
-  onSelectCase
 }) => {
   const { language, t } = useLanguage();
   const isEn = language === 'EN';
@@ -335,86 +333,6 @@ export const HomePage: React.FC<HomePageProps> = ({
                         <span>{t('packagesSelectButton')} {pkg.id}</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </button>
-                    </div>
-                  </div>
-                </StaggerItem>
-              );
-            })}
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* PORTFOLIO TEASER SECTION */}
-      <section className="py-20 sm:py-28 bg-white dark:bg-[#09090B] transition-colors">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn direction="up">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-[0.25em] text-[#A88640] dark:text-[#C6A868] block mb-3">
-                  {t('portfolioTag')}
-                </span>
-                <h2 className="font-serif text-3xl sm:text-5xl font-bold text-zinc-900 dark:text-white">
-                  {t('portfolioTitle')} <span className="italic font-normal text-zinc-500 dark:text-zinc-400">{t('portfolioTitleItalic')}</span>
-                </h2>
-              </div>
-              <button
-                onClick={() => onNavigate('portfolio')}
-                className="self-start md:self-auto inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-zinc-900 dark:bg-white text-white dark:text-[#09090B] text-xs uppercase tracking-widest font-semibold hover:bg-zinc-700 dark:hover:bg-[#C6A868] transition cursor-pointer"
-              >
-                <span>{t('portfolioViewAll')}</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </button>
-            </div>
-          </FadeIn>
-
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={0.15}>
-            {PORTFOLIO_ITEMS.slice(0, 3).map((item) => {
-              const results = isEn ? item.resultsEn : item.results;
-              const summary = isEn ? item.deliverableSummaryEn : item.deliverableSummary;
-              const catLabel = isEn ? item.categoryLabelEn : item.categoryLabel;
-
-              return (
-                <StaggerItem key={item.id}>
-                  <div
-                    onClick={() => (onSelectCase ? onSelectCase(item) : onNavigate('portfolio'))}
-                    data-cursor="view"
-                    className="portfolio-card group relative rounded-3xl overflow-hidden bg-zinc-950 aspect-[4/5] cursor-pointer shadow-lg border border-zinc-200 dark:border-zinc-800 transition-all duration-300 hover:shadow-2xl hover:border-[#C6A868]/60 h-full"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-950 to-black transition-transform duration-700 group-hover:scale-105">
-                      <div className="absolute inset-0 bg-luxury-grid opacity-30" />
-                      <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
-                        <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-3 text-[#C6A868] group-hover:scale-110 transition-transform">
-                          {item.category === 'video' && <Video className="w-7 h-7" />}
-                          {item.category === 'shoots' && <Camera className="w-7 h-7" />}
-                          {item.category === 'web' && <Globe className="w-7 h-7" />}
-                        </div>
-                        <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#C6A868]">
-                          {summary}
-                        </span>
-                      </div>
-                    </div>
-
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent" />
-
-                    <div className="absolute top-4 left-4 right-4 flex justify-between items-center z-10">
-                      <span className="px-3 py-1 rounded-full text-[10px] uppercase tracking-widest bg-black/70 text-white backdrop-blur-md border border-white/15 font-semibold">
-                        {item.packageUsed} {t('portfolioPackageBadge')}
-                      </span>
-                      <span className="w-8 h-8 rounded-full bg-white text-zinc-950 flex items-center justify-center shadow-md group-hover:bg-[#C6A868] transition">
-                        <ArrowUpRight className="w-3.5 h-3.5" />
-                      </span>
-                    </div>
-
-                    <div className="absolute bottom-6 left-6 right-6 text-white z-10">
-                      <p className="text-[10px] uppercase tracking-widest text-[#C6A868] font-semibold mb-1">
-                        {catLabel}
-                      </p>
-                      <h3 className="font-serif text-2xl font-bold group-hover:text-[#C6A868] transition-colors">
-                        {item.title}
-                      </h3>
-                      <p className="text-xs text-zinc-300 mt-2 font-medium">
-                        {results.viewsOrReach} · {results.growthOrConversion}
-                      </p>
                     </div>
                   </div>
                 </StaggerItem>
