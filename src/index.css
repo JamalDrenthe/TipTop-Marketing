@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #18181b;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+/* Dark Mode Deep Background & Text Overrides */
+html.dark body {
+  color: #f4f4f5;
+  background-color: #09090B;
+}
+
+html.dark .bg-white {
+  background-color: #09090B;
+}
+
+html.dark .bg-zinc-50 {
+  background-color: #121215;
+}
+
+html.dark .bg-zinc-100 {
+  background-color: #18181b;
+}
+
+html.dark .text-zinc-900 {
+  color: #ffffff;
+}
+
+html.dark .text-zinc-800 {
+  color: #f4f4f5;
+}
+
+html.dark .text-zinc-700 {
+  color: #e4e4e7;
+}
+
+html.dark .text-zinc-600 {
+  color: #a1a1aa;
+}
+
+html.dark .border-zinc-200 {
+  border-color: #27272a;
+}
+
+html.dark .border-zinc-300 {
+  border-color: #3f3f46;
+}
+
+/* Custom luxury subtle grid backgrounds */
+.bg-luxury-grid {
+  background-size: 56px 56px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+.bg-light-grid {
+  background-size: 56px 56px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+}
+
+html.dark .bg-light-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Premium Gold Gradient Text & Badges */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5E7C8 40%, #C6A868 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #DFC282 0%, #C6A868 50%, #A88640 100%);
+}
+
+.metallic-badge {
+  background: linear-gradient(135deg, #DFC282 0%, #EFE1BF 50%, #B8964C 100%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C6A868;
+}
