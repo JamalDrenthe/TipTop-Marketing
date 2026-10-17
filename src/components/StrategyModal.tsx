@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PackageTier } from '../utils/pricing.ts';
 import { useLanguage } from '../context/LanguageContext.tsx';
 import { X, Calendar, Clock, CheckCircle2, ArrowRight } from 'lucide-react';
@@ -14,7 +14,8 @@ export const StrategyModal: React.FC<StrategyModalProps> = ({
   onClose,
   preselectedTier
 }) => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
+  const isEn = language === 'EN';
 
   const [date, setDate] = useState<string>(() => {
     const tomorrow = new Date();
@@ -22,35 +23,48 @@ export const StrategyModal: React.FC<StrategyModalProps> = ({
     return tomorrow.toISOString().split('T')[0];
   });
   const [time, setTime] = useState<string>('10:00 - 10:30');
-  const [selectedPkg, setSelectedPkg] = useState<string>(
-    preselectedTier
-      ? preselectedTier === 'PREMIUM'
-        ? 'PREMIUM (€2.450 tot €3.000 p/m)'
-        : preselectedTier === 'GOAT'
-        ? 'GOAT (€3.250 tot €3.500 p/m)'
-        : 'PLATINUM (€1.750 p/m)'
-      : 'PREMIUM (€2.450 tot €3.000 p/m)'
-  );
+  const [selectedPkg, setSelectedPkg] = useState<string>('PREMIUM');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [isBooked, setIsBooked] = useState(false);
 
+  useEffect(() => {
+    if (preselectedTier) {
+      setSelectedPkg(preselectedTier);
+    }
+  }, [preselectedTier, isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name || !phone || !email) return;
+    if (!name.trim() || !phone.trim() || !email.trim()) return;
     setIsBooked(true);
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-200">
-      <div className="bg-[#09090B] border border-zinc-800 text-white rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl">
+    <div
+      onClick={onClose}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-200"
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-[#09090B] border border-zinc-800 text-white rounded-3xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl"
+      >
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 text-zinc-300 hover:text-white flex items-center justify-center transition"
-          aria-label="Sluit modal"
+          className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 text-zinc-300 hover:text-white flex items-center justify-center transition cursor-pointer"
+          aria-label="Close modal"
         >
           <X className="w-5 h-5" />
         </button>
@@ -74,13 +88,26 @@ export const StrategyModal: React.FC<StrategyModalProps> = ({
                   {t('modalBookedTitle')}
                 </h4>
                 <p className="text-xs text-zinc-300 mt-2 leading-relaxed">
-                  Beste <strong>{name}</strong>, je sessie staat ingepland op{' '}
-                  <strong>{date} om {time}</strong> (Focus: {selectedPkg}).
-                  De agenda uitnodiging is verstuurd naar <strong className="text-white">{email}</strong>.
+                  {isEn ? (
+                    <>
+                      Dear <strong>{name}</strong>, your strategy session is scheduled for{' '}
+                      <strong>{date} at {time}</strong> (Focus: {selectedPkg}). A calendar invitation has been sent to{' '}
+                      <strong className="text-white">{email}</strong>.
+                    </>
+                  ) : (
+                    <>
+                      Beste <strong>{name}</strong>, je sessie staat ingepland op{' '}
+                      <strong>{date} om {time}</strong> (Focus: {selectedPkg}). De agenda uitnodiging is verstuurd naar{' '}
+                      <strong className="text-white">{email}</strong>.
+                    </>
+                  )}
                 </p>
                 <button
-                  onClick={onClose}
-                  className="mt-5 px-6 py-2.5 rounded-xl metallic-badge text-[#09090B] text-xs font-bold uppercase tracking-wider hover:opacity-95"
+                  onClick={() => {
+                    setIsBooked(false);
+                    onClose();
+                  }}
+                  className="mt-5 px-6 py-2.5 rounded-xl metallic-badge text-[#09090B] text-xs font-bold uppercase tracking-wider hover:opacity-95 cursor-pointer"
                 >
                   {t('modalBookedClose')}
                 </button>
@@ -98,16 +125,10 @@ export const StrategyModal: React.FC<StrategyModalProps> = ({
                 onChange={(e) => setSelectedPkg(e.target.value)}
                 className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-700 text-sm text-white focus:outline-none focus:border-[#C6A868]"
               >
-                <option value="PREMIUM (€2.450 tot €3.000 p/m)">
-                  PREMIUM (€2.450 tot €3.000 p/m) — Meest gekozen
-                </option>
-                <option value="PLATINUM (€1.750 p/m)">PLATINUM (€1.750 p/m)</option>
-                <option value="GOAT (€3.250 tot €3.500 p/m)">
-                  GOAT (€3.250 tot €3.500 p/m) — Top tier
-                </option>
-                <option value="Algemeen Strategiegesprek">
-                  Nog niet zeker — Vrijblijvend advies op maat
-                </option>
+                <option value="PREMIUM">{t('contactPkgOption2')}</option>
+                <option value="PLATINUM">{t('contactPkgOption1')}</option>
+                <option value="GOAT">{t('contactPkgOption3')}</option>
+                <option value="CUSTOM">{t('contactPkgOptionCustom')}</option>
               </select>
             </div>
 
@@ -153,7 +174,7 @@ export const StrategyModal: React.FC<StrategyModalProps> = ({
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder={t('contactNameLabel')}
-                className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-700 text-sm text-white focus:outline-none focus:border-[#C6A868]"
+                className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-700 text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:border-[#C6A868]"
               />
               <input
                 type="tel"
@@ -161,7 +182,7 @@ export const StrategyModal: React.FC<StrategyModalProps> = ({
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder={t('contactPhoneLabel')}
-                className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-700 text-sm text-white focus:outline-none focus:border-[#C6A868]"
+                className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-700 text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:border-[#C6A868]"
               />
             </div>
 
@@ -171,12 +192,12 @@ export const StrategyModal: React.FC<StrategyModalProps> = ({
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder={t('contactEmailLabel')}
-              className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-700 text-sm text-white focus:outline-none focus:border-[#C6A868]"
+              className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-700 text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:border-[#C6A868]"
             />
 
             <button
               type="submit"
-              className="w-full py-4 rounded-xl metallic-badge text-[#09090B] font-extrabold text-xs uppercase tracking-widest hover:opacity-95 transition shadow-lg flex items-center justify-center gap-2"
+              className="w-full py-4 rounded-xl metallic-badge text-[#09090B] font-extrabold text-xs uppercase tracking-widest hover:opacity-95 transition shadow-lg flex items-center justify-center gap-2 cursor-pointer"
             >
               <span>{t('modalConfirmBtn')}</span>
               <ArrowRight className="w-4 h-4" />

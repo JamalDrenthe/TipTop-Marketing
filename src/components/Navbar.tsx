@@ -34,12 +34,12 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <>
       {/* Top High-Volume Retainer Availability Strip */}
-      <div className="bg-[#09090B] text-zinc-300 text-xs py-2 px-4 border-b border-zinc-800">
+      <div className="bg-[#09090B] text-zinc-300 text-xs py-2.5 px-4 border-b border-zinc-800/90">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-[#C6A868] animate-pulse" />
-            <span className="tracking-wider uppercase text-[11px] font-medium text-zinc-300">
-              {t('topBarCapacity')} <strong className="text-white">{t('topBarAvailable')}</strong>
+          <div className="flex items-center gap-2.5">
+            <span className="inline-block w-2 h-2 rounded-full bg-[#C6A868] animate-pulse shrink-0" />
+            <span className="tracking-wider uppercase text-[11px] font-medium text-zinc-300 leading-snug">
+              {t('topBarCapacity')} <strong className="text-white font-bold">{t('topBarAvailable')}</strong>
             </span>
           </div>
           <div className="hidden sm:flex items-center gap-6 text-[11px] tracking-wider uppercase text-zinc-400">
@@ -49,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <span>·</span>
             <button
               onClick={onOpenStrategyModal}
-              className="text-[#C6A868] hover:text-white transition font-medium underline underline-offset-4"
+              className="text-[#C6A868] hover:text-white transition font-semibold underline underline-offset-4 cursor-pointer"
             >
               {t('topBarScheduleDirect')} &rarr;
             </button>
@@ -58,16 +58,16 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* Main Sticky Header */}
-      <header className="sticky top-0 z-40 bg-white/95 dark:bg-[#09090B]/95 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800 transition-colors">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
+      <header className="sticky top-0 z-40 bg-white/95 dark:bg-[#09090B]/95 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800 transition-colors duration-250">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4 sm:gap-6">
           
           {/* Zone 1: Single Brand Lockup */}
           <button
             onClick={() => handleLinkClick('home')}
-            className="flex items-center gap-3 text-left focus:outline-none group shrink-0"
+            className="flex items-center gap-3 text-left focus:outline-none group shrink-0 cursor-pointer"
             aria-label="TipTop Marketing Home"
           >
-            <TipTopLogo size={52} showText={true} textColor={theme === 'dark' ? 'text-white' : 'text-zinc-900'} />
+            <TipTopLogo size={50} showText={true} />
           </button>
 
           {/* Zone 2: 4 Nav links */}
@@ -78,10 +78,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <button
                   key={link.id}
                   onClick={() => handleLinkClick(link.id)}
-                  className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 whitespace-nowrap shrink-0 ${
+                  className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-200 whitespace-nowrap shrink-0 cursor-pointer ${
                     isActive
                       ? 'bg-zinc-900 dark:bg-white text-white dark:text-[#09090B] shadow-sm'
-                      : 'text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800'
+                      : 'text-zinc-600 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/80'
                   }`}
                 >
                   {link.label}
@@ -94,10 +94,10 @@ export const Navbar: React.FC<NavbarProps> = ({
           <div className="hidden md:flex items-center gap-3 shrink-0">
             {/* EN / NL Segmented Language Toggle */}
             <div className="flex items-center gap-1 p-1 bg-zinc-100 dark:bg-zinc-900 rounded-full border border-zinc-200/80 dark:border-zinc-800 shrink-0">
-              <Globe className="w-3.5 h-3.5 text-zinc-500 ml-1.5 mr-0.5" />
+              <Globe className="w-3.5 h-3.5 text-zinc-500 dark:text-zinc-400 ml-1.5 mr-0.5" />
               <button
                 onClick={() => setLanguage('NL')}
-                className={`px-2.5 py-1 rounded-full text-[11px] font-bold uppercase transition ${
+                className={`px-2.5 py-1 rounded-full text-[11px] font-bold uppercase transition cursor-pointer ${
                   language === 'NL'
                     ? 'bg-zinc-900 dark:bg-white text-white dark:text-[#09090B] shadow-xs'
                     : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white'
@@ -108,7 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
               <button
                 onClick={() => setLanguage('EN')}
-                className={`px-2.5 py-1 rounded-full text-[11px] font-bold uppercase transition ${
+                className={`px-2.5 py-1 rounded-full text-[11px] font-bold uppercase transition cursor-pointer ${
                   language === 'EN'
                     ? 'bg-zinc-900 dark:bg-white text-white dark:text-[#09090B] shadow-xs'
                     : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white'
@@ -122,49 +122,58 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Dark / Light Theme Toggle Switch */}
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white transition flex items-center justify-center shrink-0"
-              title={theme === 'dark' ? 'Schakel naar Lichte Modus' : 'Schakel naar Donkere Modus'}
-              aria-label="Theme mode toggle"
+              className="p-2.5 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-[#C6A868] hover:border-[#C6A868] dark:hover:border-[#C6A868] transition flex items-center justify-center shrink-0 cursor-pointer"
+              title={theme === 'dark' ? t('themeToLight') : t('themeToDark')}
+              aria-label={theme === 'dark' ? t('themeToLight') : t('themeToDark')}
             >
               {theme === 'dark' ? (
                 <Sun className="w-4 h-4 text-[#C6A868]" />
               ) : (
-                <Moon className="w-4 h-4 text-zinc-700" />
+                <Moon className="w-4 h-4 text-zinc-800" />
               )}
             </button>
 
             <button
               onClick={onOpenStrategyModal}
-              className="group inline-flex items-center gap-2 bg-[#09090B] dark:bg-white text-white dark:text-[#09090B] text-xs uppercase tracking-widest font-semibold px-5 py-3 rounded-full hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-all shadow-sm hover:shadow-md whitespace-nowrap shrink-0"
+              className="group inline-flex items-center gap-2 bg-[#09090B] dark:bg-white text-white dark:text-[#09090B] text-xs uppercase tracking-widest font-semibold px-5 py-3 rounded-full hover:bg-zinc-800 dark:hover:bg-[#C6A868] transition-all shadow-sm hover:shadow-md whitespace-nowrap shrink-0 cursor-pointer"
             >
               <span>{t('navStrategyCall')}</span>
               <ArrowUpRight className="w-3.5 h-3.5 text-[#C6A868] dark:text-[#09090B] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </button>
           </div>
 
-          {/* Mobile Right Controls: Language, Theme & Hamburger Toggle */}
+          {/* Mobile Right Controls: Theme, Language & Hamburger Toggle */}
           <div className="flex items-center gap-2 md:hidden">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300"
-              aria-label="Theme mode toggle"
+              className="p-2.5 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-[#C6A868]"
+              title={theme === 'dark' ? t('themeToLight') : t('themeToDark')}
+              aria-label={theme === 'dark' ? t('themeToLight') : t('themeToDark')}
             >
-              {theme === 'dark' ? <Sun className="w-4 h-4 text-[#C6A868]" /> : <Moon className="w-4 h-4" />}
+              {theme === 'dark' ? (
+                <Sun className="w-4 h-4 text-[#C6A868]" />
+              ) : (
+                <Moon className="w-4 h-4 text-zinc-800" />
+              )}
             </button>
 
             <div className="flex items-center gap-1 p-1 bg-zinc-100 dark:bg-zinc-900 rounded-full border border-zinc-200 dark:border-zinc-800">
               <button
                 onClick={() => setLanguage('NL')}
-                className={`px-2 py-0.5 rounded-full text-[10px] font-bold uppercase ${
-                  language === 'NL' ? 'bg-zinc-900 dark:bg-white text-white dark:text-[#09090B]' : 'text-zinc-600 dark:text-zinc-400'
+                className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase transition ${
+                  language === 'NL'
+                    ? 'bg-zinc-900 dark:bg-white text-white dark:text-[#09090B]'
+                    : 'text-zinc-600 dark:text-zinc-400'
                 }`}
               >
                 NL
               </button>
               <button
                 onClick={() => setLanguage('EN')}
-                className={`px-2 py-0.5 rounded-full text-[10px] font-bold uppercase ${
-                  language === 'EN' ? 'bg-zinc-900 dark:bg-white text-white dark:text-[#09090B]' : 'text-zinc-600 dark:text-zinc-400'
+                className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase transition ${
+                  language === 'EN'
+                    ? 'bg-zinc-900 dark:bg-white text-white dark:text-[#09090B]'
+                    : 'text-zinc-600 dark:text-zinc-400'
                 }`}
               >
                 EN
@@ -173,7 +182,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800 focus:outline-none"
+              className="p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white hover:bg-zinc-200 dark:hover:bg-zinc-800 focus:outline-none"
               aria-label={mobileMenuOpen ? 'Sluit menu' : 'Open menu'}
               aria-expanded={mobileMenuOpen}
             >
@@ -189,7 +198,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 key={link.id}
                 onClick={() => handleLinkClick(link.id)}
-                className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold flex items-center justify-between ${
+                className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold flex items-center justify-between transition ${
                   activePage === link.id
                     ? 'bg-zinc-900 dark:bg-white text-white dark:text-[#09090B]'
                     : 'text-zinc-800 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800'
@@ -197,7 +206,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               >
                 <span>{link.label}</span>
                 {link.id === 'pakketten' && (
-                  <span className="text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#C6A868]/20 text-[#A88640] font-bold">
+                  <span className="text-[10px] uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-[#C6A868]/20 text-[#C6A868] font-bold">
                     {t('navPackagesCount')}
                   </span>
                 )}
@@ -210,10 +219,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                   setMobileMenuOpen(false);
                   onOpenStrategyModal();
                 }}
-                className="w-full bg-[#09090B] dark:bg-white text-white dark:text-[#09090B] py-3.5 rounded-xl font-semibold text-xs uppercase tracking-widest flex items-center justify-center gap-2"
+                className="w-full metallic-badge text-[#09090B] py-3.5 rounded-xl font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-md"
               >
                 <span>{t('navScheduleCallMobile')}</span>
-                <ArrowUpRight className="w-3.5 h-3.5 text-[#C6A868] dark:text-[#09090B]" />
+                <ArrowUpRight className="w-3.5 h-3.5 text-[#09090B]" />
               </button>
             </div>
           </div>

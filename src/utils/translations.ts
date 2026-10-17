@@ -17,12 +17,15 @@ export const translations = {
     navStrategyCall: 'Strategiegesprek',
     navPackagesCount: '3 Pakketten',
     navScheduleCallMobile: 'Plan Gratis Strategiegesprek',
+    themeToLight: 'Schakel naar Lichte Modus',
+    themeToDark: 'Schakel naar Donkere Modus',
 
     // Hero
     heroBadge: 'High Volume Content & Performance Agency',
     heroTitleLine1: 'Schaal je merk',
     heroTitleLine2: 'naar de top.',
-    heroSubtitle: 'Wij bouwen dominante merken voor de grote jongens. Van high volume videoproductie (8 tot 20 video\'s p/m) en speciale shoots tot volledig social management, websites en webshops.',
+    heroSubtitle:
+      "Wij bouwen dominante merken voor marktleiders. Van high volume videoproductie (8 tot 20 video's p/m) en speciale shoots tot volledig social management, websites en webshops.",
     heroCtaPackages: 'Bekijk Onze Pakketten',
     heroCtaStrategy: 'Gratis Strategiegesprek',
     heroMetric1Value: '8 tot 20',
@@ -32,10 +35,18 @@ export const translations = {
     heroMetric3Value: '100%',
     heroMetric3Label: 'Done For You',
 
+    // Marquee
+    marquee1: 'High Volume Videoproductie',
+    marquee2: 'Full Social Management',
+    marquee3: 'Speciale Shoots & Campagnes',
+    marquee4: 'High End Websites & Webshops',
+    marquee5: 'Contactmanagement & Groei',
+    marquee6: 'Dominante Merkpositionering',
+
     // Emblem Card
     emblemTitle: 'High Volume Retainer Formula',
     emblemTag: 'ALL IN AGENCY',
-    emblemItem1: "Maandelijkse Video Output (8 tot 20 p/m)",
+    emblemItem1: 'Maandelijkse Video Output (8 tot 20 p/m)',
     emblemItem2: 'Shoots & Fotografie Inbegrepen',
     emblemItem3: 'Bespoke Web & Webshop Development',
 
@@ -43,47 +54,87 @@ export const translations = {
     pillarsTag: '01. De Nieuwe Standaard',
     pillarsTitleLine1: 'Kwaliteit én volume.',
     pillarsTitleLine2: 'Zonder compromis.',
-    pillarsDesc: 'In het huidige digitale landschap wint het merk dat consistent én op hoog niveau zichtbaar is. TipTop Marketing combineert cinema grade productiekwaliteit met een niet te stoppen maandelijkse output.',
+    pillarsDesc:
+      'In het huidige digitale landschap wint het merk dat consistent én op hoog niveau zichtbaar is. TipTop Marketing combineert cinema grade productiekwaliteit met een niet te stoppen maandelijkse output.',
     pillar1Title: 'High Volume Productie',
-    pillar1Desc: "Van 8 tot wel 20 gepolijste short form en campagne video's per maand. Gefilmd met professionele apparatuur en gemonteerd voor maximale retentie.",
+    pillar1Desc:
+      "Van 8 tot wel 20 gepolijste short form en campagne video's per maand. Gefilmd met professionele apparatuur en gemonteerd voor maximale retentie.",
     pillar2Title: 'Full Social Management',
-    pillar2Desc: 'Wij nemen je volledige social media kanalen (Instagram, TikTok, LinkedIn) uit handen: strategie, copywriting, planning, plaatsing en community interactie.',
+    pillar2Desc:
+      'Wij nemen je volledige social media kanalen (Instagram, TikTok, LinkedIn) uit handen: strategie, copywriting, planning, plaatsing en community interactie.',
     pillar3Title: 'Campagnes & Special Shoots',
-    pillar3Desc: 'Lancering van een nieuw product, collectie of dienst? Wij regisseren en produceren high impact fotoshoots en doelgerichte lanceringcampagnes.',
+    pillar3Desc:
+      'Lancering van een nieuw product, collectie of dienst? Wij regisseren en produceren high impact fotoshoots en doelgerichte lanceringscampagnes.',
     pillar4Title: 'Websites & Webshops',
-    pillar4Desc: 'In onze Premium en GOAT pakketten ontwerpen, ontwikkelen en onderhouden wij ook jouw razendsnelle website of converterende e commerce webshop.',
+    pillar4Desc:
+      'In onze Premium en GOAT pakketten ontwerpen, ontwikkelen en onderhouden wij ook jouw razendsnelle website of converterende e commerce webshop.',
 
     // Packages Section
     packagesTag: '02. Transparante Retainers',
+    packagesPageTitleSuffix: 'Prijzen',
     packagesTitle: 'Kies jouw',
     packagesTitleItalic: 'groeisnelheid.',
     packagesFullComparison: 'Volledige Pakketvergelijking',
     packagesGoal1: 'Snel Schalen (Video Focus)',
     packagesGoal2: 'Complete Dominantie + Web',
     packagesGoal3: 'All In E Commerce (GOAT)',
+    packagesRecommendedBadge: 'Aanbevolen voor jouw doel',
+    packagesTierLabel: 'Pakket',
     packagesIncludedLabel: 'Inbegrepen in',
     packagesSelectButton: 'Kies',
-    packagesStrategyLink: 'Strategiegesprek plannen',
+    packagesStrategyLink: 'Eerst vrijblijvend strategiegesprek plannen',
     packagesComparisonHeading: 'Vergelijk alle specificaties',
-    packagesComparisonSubheading: 'Bekijk exact welke deliverables en producties per maand zijn inbegrepen.',
+    packagesComparisonSubheading:
+      'Bekijk exact welke deliverables en producties per maand zijn inbegrepen.',
+    tableColDeliverable: 'Onderdeel / Deliverable',
+    tableRowVideos: 'Maandelijkse Video Output',
+    tableValVideosPlatinum: "8 tot 12 video's",
+    tableValVideosPremium: "12 tot 16 video's",
+    tableValVideosGoat: "16 tot 20 video's",
+    tableRowPhotos: 'Professionele Fotografie',
+    tableValPhotosPremium: "9 foto's p/m",
+    tableValPhotosGoat: "18 foto's p/m",
+    tableRowHighVolume: 'High volume productie',
+    tableRowSocialMgmt: 'Full social management',
+    tableRowShoots: 'Campagnes en speciale shoots',
+    tableRowContactMgmt: "Contactmanagement (DM's & Leads)",
+    tableRowWebsite: 'High end Website',
+    tableRowWebshop: 'Webshop (E Commerce)',
+    tableValIncluded: 'Inbegrepen',
+    tableRowSelect: 'Direct Pakket Kiezen',
 
     // Portfolio Section
     portfolioTag: '03. Recente Producties',
     portfolioTitle: 'Werk dat',
     portfolioTitleItalic: 'voor zich spreekt.',
+    portfolioSubtitle:
+      'Bekijk hoe wij voor ambitieuze merken high volume videocontent, campagneshoots en converterende websites & webshops realiseren.',
     portfolioViewAll: 'Bekijk Volledig Portfolio',
     portfolioCategoryAll: 'Alle Cases (6)',
     portfolioCategoryVideo: 'High Volume Video',
     portfolioCategoryShoots: 'Special Shoots & Fotografie',
     portfolioCategoryWeb: 'Website & Webshop',
+    portfolioPackageBadge: 'PAKKET',
     portfolioBannerTitle: 'Wil jij ook zulke resultaten voor jouw merk?',
-    portfolioBannerDesc: 'We bespreken graag vrijblijvend hoe we jouw social kanalen en contentproductie binnen 30 dagen naar het volgende niveau tillen.',
+    portfolioBannerDesc:
+      'We bespreken graag vrijblijvend hoe we jouw social kanalen en contentproductie binnen 30 dagen naar het volgende niveau tillen.',
+
+    // Case Study Modal
+    caseModalTag: 'Case Study Analyse',
+    caseModalRetainerSuffix: 'PAKKET RETAINER',
+    caseModalMetricReach: 'Organisch Bereik',
+    caseModalMetricOutput: 'Maandelijkse Output',
+    caseModalMetricImpact: 'Conversie Impact',
+    caseModalIncludedIn: 'Inbegrepen in het',
+    caseModalPackageWord: 'pakket',
+    caseModalChooseBtn: 'Kies',
 
     // Contact Section
     contactTag: '✦ Start de Samenwerking',
     contactTitle: 'Klaar voor',
     contactTitleItalic: 'TipTop resultaat?',
-    contactSubtitle: 'Vraag direct een concreet voorstel aan voor een van onze maandelijkse retainers of plan een gratis 1 op 1 strategiegesprek.',
+    contactSubtitle:
+      'Vraag direct een concreet voorstel aan voor een van onze maandelijkse retainers of plan een gratis 1 op 1 strategiegesprek.',
     contactFormHeading: 'Offerte of Kennismaking Aanvragen',
     contactFormSubheading: 'Binnen 24 uur reactie van onze directie.',
     contactNameLabel: 'Jouw Naam *',
@@ -95,16 +146,24 @@ export const translations = {
     contactPhoneLabel: 'Telefoon / WhatsApp *',
     contactPhonePlaceholder: '+31 6 12 34 56 78',
     contactPackageLabel: 'Gewenst Pakket of Vraagstuk *',
+    contactPkgOption1: 'Pakket 1: PLATINUM (€1.750 p/m)',
+    contactPkgOption2: 'Pakket 2: PREMIUM (€2.450 tot €3.000 p/m) · Meest gekozen',
+    contactPkgOption3: 'Pakket 3: GOAT (€3.250 tot €3.500 p/m) · Top tier',
+    contactPkgOptionCustom: 'Strategiegesprek / Advies op maat',
     contactGoalsLabel: 'Wat zijn je doelen voor de komende 90 dagen?',
-    contactGoalsPlaceholder: 'Vertel ons kort over je merk, huidige kanalen en waar je graag naartoe wilt groeien...',
+    contactGoalsPlaceholder:
+      'Vertel ons kort over je merk, huidige kanalen en waar je graag naartoe wilt groeien...',
     contactSubmitBtn: 'Aanvraag Verzenden',
+    contactWhatsAppDirect: 'Of chat direct via WhatsApp',
     contactSuccessTitle: 'Aanvraag succesvol verstuurd!',
     contactNewMessageBtn: 'Nieuw bericht versturen',
     contactSidebarTitle: 'Liever direct een strategiegesprek inplannen?',
-    contactSidebarDesc: 'Prik direct een datum en tijdstip in onze agenda. We analyseren je kanalen en laten zien hoe een van onze 3 formules direct tractie realiseert.',
+    contactSidebarDesc:
+      'Prik direct een datum en tijdstip in onze agenda. We analyseren je kanalen en laten zien hoe een van onze 3 formules direct tractie realiseert.',
     contactSidebarBtn: 'Open Agenda & Kies Tijdslot',
     contactSocialTitle: 'Volg TipTop Marketing',
-    contactSocialDesc: 'Bekijk onze dagelijkse producties, achter de schermen shoots en viraal advies op onze officiële kanalen:',
+    contactSocialDesc:
+      'Bekijk onze dagelijkse producties, achter de schermen shoots en groeistrategieën op onze officiële kanalen:',
 
     // Strategy Modal
     modalBadge: '✦ 1 op 1 Groeisessie (30 Min)',
@@ -118,7 +177,7 @@ export const translations = {
     modalBookedClose: 'Sluiten & Verder',
 
     // Footer
-    footerDesc: 'Het high-volume content & performance marketingbureau voor ambitieuze merken.',
+    footerDesc: 'Het high volume content & performance marketingbureau voor ambitieuze merken.',
     footerNavHeading: "Pagina's",
     footerLegalVoorwaarden: 'Algemene Voorwaarden',
     footerLegalPrivacy: 'Privacybeleid',
@@ -126,7 +185,8 @@ export const translations = {
     // Bottom CTA
     bottomCtaTag: '✦ TIPTOP MARKETING AGENCY',
     bottomCtaTitle: 'Klaar om jouw markt te domineren?',
-    bottomCtaDesc: 'Plan vandaag nog een vrijblijvend strategiegesprek van 30 minuten. We analyseren je huidige kanalen en laten exact zien welk pakket het hoogste rendement oplevert.',
+    bottomCtaDesc:
+      'Plan vandaag nog een vrijblijvend strategiegesprek van 30 minuten. We analyseren je huidige kanalen en laten exact zien welk pakket het hoogste rendement oplevert.',
     bottomCtaDirectBtn: 'Direct Offerte Aanvragen'
   },
   EN: {
@@ -145,25 +205,36 @@ export const translations = {
     navStrategyCall: 'Strategy Session',
     navPackagesCount: '3 Packages',
     navScheduleCallMobile: 'Book Free Strategy Session',
+    themeToLight: 'Switch to Light Mode',
+    themeToDark: 'Switch to Dark Mode',
 
     // Hero
     heroBadge: 'High Volume Content & Performance Agency',
     heroTitleLine1: 'Scale your brand',
     heroTitleLine2: 'to the absolute top.',
-    heroSubtitle: 'We build dominant brands for market leaders. From high volume video production (8 to 20 videos p/m) and special shoots to full social management, custom websites and e commerce webshops.',
+    heroSubtitle:
+      'We build dominant brands for market leaders. From high volume video production (8 to 20 videos /mo) and special shoots to full social management, custom websites and e commerce webshops.',
     heroCtaPackages: 'View Our Packages',
     heroCtaStrategy: 'Free Strategy Session',
     heroMetric1Value: '8 to 20',
-    heroMetric1Label: 'Videos p/m',
+    heroMetric1Label: 'Videos /mo',
     heroMetric2Value: '15M+',
     heroMetric2Label: 'Organic Views',
     heroMetric3Value: '100%',
     heroMetric3Label: 'Done For You',
 
+    // Marquee
+    marquee1: 'High Volume Video Production',
+    marquee2: 'Full Social Management',
+    marquee3: 'Special Shoots & Campaigns',
+    marquee4: 'High End Websites & Webshops',
+    marquee5: 'DM Lead Management & Growth',
+    marquee6: 'Dominant Brand Positioning',
+
     // Emblem Card
     emblemTitle: 'High Volume Retainer Formula',
     emblemTag: 'ALL IN AGENCY',
-    emblemItem1: 'Monthly Video Output (8 to 20 p/m)',
+    emblemItem1: 'Monthly Video Output (8 to 20 /mo)',
     emblemItem2: 'Shoots & Photography Included',
     emblemItem3: 'Bespoke Web & Webshop Development',
 
@@ -171,47 +242,87 @@ export const translations = {
     pillarsTag: '01. The New Standard',
     pillarsTitleLine1: 'Quality AND volume.',
     pillarsTitleLine2: 'Zero compromises.',
-    pillarsDesc: 'In today\'s digital landscape, the winning brand is the one with relentless high quality visibility. TipTop Marketing combines cinema grade production with unstoppable monthly volume.',
+    pillarsDesc:
+      "In today's digital landscape, the winning brand is the one with relentless high quality visibility. TipTop Marketing combines cinema grade production with unstoppable monthly volume.",
     pillar1Title: 'High Volume Production',
-    pillar1Desc: 'From 8 up to 20 polished short form and campaign videos every month. Shot on professional gear and edited for maximum watch time retention.',
+    pillar1Desc:
+      'From 8 up to 20 polished short form and campaign videos every month. Shot on professional gear and edited for maximum watch time retention.',
     pillar2Title: 'Full Social Management',
-    pillar2Desc: 'We manage your entire social presence (Instagram, TikTok, LinkedIn): strategy, copywriting, scheduling, publishing and community management.',
+    pillar2Desc:
+      'We manage your entire social presence (Instagram, TikTok, LinkedIn): strategy, copywriting, scheduling, publishing and community management.',
     pillar3Title: 'Campaigns & Special Shoots',
-    pillar3Desc: 'Launching a new product or collection? We direct and produce high impact editorial photoshoots and targeted launch campaigns.',
+    pillar3Desc:
+      'Launching a new product or collection? We direct and produce high impact editorial photoshoots and targeted launch campaigns.',
     pillar4Title: 'Websites & Webshops',
-    pillar4Desc: 'Included in our Premium and GOAT retainers, we design, build and maintain your lightning fast website or high converting e commerce webshop.',
+    pillar4Desc:
+      'Included in our Premium and GOAT retainers, we design, build and maintain your lightning fast website or high converting e commerce webshop.',
 
     // Packages Section
     packagesTag: '02. Transparent Retainers',
+    packagesPageTitleSuffix: 'Pricing',
     packagesTitle: 'Choose your',
     packagesTitleItalic: 'growth rate.',
     packagesFullComparison: 'Full Package Comparison',
     packagesGoal1: 'Fast Scaling (Video Focus)',
     packagesGoal2: 'Complete Dominance + Web',
     packagesGoal3: 'All In E Commerce (GOAT)',
+    packagesRecommendedBadge: 'Recommended for your goal',
+    packagesTierLabel: 'Tier',
     packagesIncludedLabel: 'Included in',
     packagesSelectButton: 'Select',
-    packagesStrategyLink: 'Schedule strategy call',
+    packagesStrategyLink: 'Schedule a free strategy call first',
     packagesComparisonHeading: 'Compare all specifications',
-    packagesComparisonSubheading: 'Review exact monthly production deliverables included in each tier.',
+    packagesComparisonSubheading:
+      'Review exact monthly production deliverables included in each tier.',
+    tableColDeliverable: 'Deliverable / Feature',
+    tableRowVideos: 'Monthly Video Output',
+    tableValVideosPlatinum: '8 to 12 videos',
+    tableValVideosPremium: '12 to 16 videos',
+    tableValVideosGoat: '16 to 20 videos',
+    tableRowPhotos: 'Professional Photography',
+    tableValPhotosPremium: '9 photos /mo',
+    tableValPhotosGoat: '18 photos /mo',
+    tableRowHighVolume: 'High volume production',
+    tableRowSocialMgmt: 'Full social management',
+    tableRowShoots: 'Campaigns & special shoots',
+    tableRowContactMgmt: 'Contact management (DMs & Leads)',
+    tableRowWebsite: 'Custom High End Website',
+    tableRowWebshop: 'E Commerce Webshop',
+    tableValIncluded: 'Included',
+    tableRowSelect: 'Select Package Directly',
 
     // Portfolio Section
     portfolioTag: '03. Featured Production Work',
     portfolioTitle: 'Work that',
     portfolioTitleItalic: 'speaks for itself.',
+    portfolioSubtitle:
+      'Explore how we deliver high volume video production, editorial campaign shoots, and high converting websites & webshops for ambitious brands.',
     portfolioViewAll: 'View Full Portfolio',
     portfolioCategoryAll: 'All Cases (6)',
     portfolioCategoryVideo: 'High Volume Video',
     portfolioCategoryShoots: 'Special Shoots & Photography',
     portfolioCategoryWeb: 'Website & Webshop',
+    portfolioPackageBadge: 'TIER',
     portfolioBannerTitle: 'Want similar results for your brand?',
-    portfolioBannerDesc: 'Let\'s discuss how we can transform your social channels and content volume within 30 days.',
+    portfolioBannerDesc:
+      'Let us show you in a free 30 minute strategy session how we can scale your social channels and content volume within 30 days.',
+
+    // Case Study Modal
+    caseModalTag: 'Case Study Analysis',
+    caseModalRetainerSuffix: 'RETAINER TIER',
+    caseModalMetricReach: 'Organic Reach',
+    caseModalMetricOutput: 'Monthly Output',
+    caseModalMetricImpact: 'Conversion Impact',
+    caseModalIncludedIn: 'Included in the',
+    caseModalPackageWord: 'retainer',
+    caseModalChooseBtn: 'Select',
 
     // Contact Section
     contactTag: '✦ Start Your Partnership',
     contactTitle: 'Ready for',
     contactTitleItalic: 'TipTop growth?',
-    contactSubtitle: 'Request a concrete proposal for our monthly retainers or book a free 1 on 1 strategy call.',
+    contactSubtitle:
+      'Request a concrete proposal for our monthly retainers or book a free 1 on 1 strategy call.',
     contactFormHeading: 'Request Quote or Consultation',
     contactFormSubheading: 'Response within 24 hours from agency directors.',
     contactNameLabel: 'Your Name *',
@@ -223,16 +334,24 @@ export const translations = {
     contactPhoneLabel: 'Phone / WhatsApp *',
     contactPhonePlaceholder: '+31 6 12 34 56 78',
     contactPackageLabel: 'Selected Package or Topic *',
+    contactPkgOption1: 'Tier 1: PLATINUM (€1,750 /mo)',
+    contactPkgOption2: 'Tier 2: PREMIUM (€2,450 to €3,000 /mo) · Most Popular',
+    contactPkgOption3: 'Tier 3: GOAT (€3,250 to €3,500 /mo) · Top Tier',
+    contactPkgOptionCustom: 'Strategy Session / Custom Advice',
     contactGoalsLabel: 'What are your key goals for the next 90 days?',
-    contactGoalsPlaceholder: 'Tell us briefly about your brand, current social presence and growth targets...',
+    contactGoalsPlaceholder:
+      'Tell us briefly about your brand, current social presence and growth targets...',
     contactSubmitBtn: 'Submit Proposal Request',
+    contactWhatsAppDirect: 'Or chat directly on WhatsApp',
     contactSuccessTitle: 'Request successfully submitted!',
     contactNewMessageBtn: 'Send another message',
     contactSidebarTitle: 'Prefer to schedule directly into our calendar?',
-    contactSidebarDesc: 'Pick a date and time in our booking calendar. We will analyze your channels and demonstrate how our formulas generate immediate traction.',
+    contactSidebarDesc:
+      'Pick a date and time in our booking calendar. We will analyze your channels and demonstrate how our formulas generate immediate traction.',
     contactSidebarBtn: 'Open Calendar & Pick Slot',
     contactSocialTitle: 'Follow TipTop Marketing',
-    contactSocialDesc: 'Explore our daily productions, behind the scenes shoots and viral growth advice:',
+    contactSocialDesc:
+      'Explore our daily productions, behind the scenes shoots and viral growth strategies:',
 
     // Strategy Modal
     modalBadge: '✦ 1 on 1 Growth Session (30 Min)',
@@ -254,7 +373,8 @@ export const translations = {
     // Bottom CTA
     bottomCtaTag: '✦ TIPTOP MARKETING AGENCY',
     bottomCtaTitle: 'Ready to dominate your market?',
-    bottomCtaDesc: 'Schedule a free 30 minute strategy session today. We will analyze your current channels and demonstrate which retainer delivers maximum ROI.',
+    bottomCtaDesc:
+      'Schedule a free 30 minute strategy session today. We will analyze your current channels and demonstrate which retainer delivers maximum ROI.',
     bottomCtaDirectBtn: 'Request Quote Directly'
   }
 };

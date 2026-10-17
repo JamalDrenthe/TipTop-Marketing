@@ -33,25 +33,27 @@ export const SkeletonPricing: React.FC = () => {
   return (
     <div className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center space-y-4 mb-12">
-        <div className="h-6 w-40 bg-zinc-200 rounded-full mx-auto animate-pulse" />
-        <div className="h-12 w-72 bg-zinc-200 rounded-2xl mx-auto animate-pulse" />
-        <div className="h-4 w-96 bg-zinc-100 rounded-full mx-auto animate-pulse" />
+        <div className="h-6 w-40 bg-zinc-200 dark:bg-zinc-800 rounded-full mx-auto animate-pulse" />
+        <div className="h-12 w-72 bg-zinc-200 dark:bg-zinc-800 rounded-2xl mx-auto animate-pulse" />
+        <div className="h-4 w-96 bg-zinc-100 dark:bg-zinc-900 rounded-full mx-auto animate-pulse" />
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {[1, 2, 3].map((i) => (
           <div
             key={i}
             className={`rounded-3xl p-8 border animate-pulse ${
-              i === 2 ? 'bg-zinc-900 border-zinc-700 h-96' : 'bg-white border-zinc-200 h-96'
+              i === 2
+                ? 'bg-zinc-900 border-zinc-700 h-96'
+                : 'bg-white dark:bg-[#121215] border-zinc-200 dark:border-zinc-800 h-96'
             }`}
           >
-            <div className="h-4 w-20 bg-zinc-300/40 rounded-full mb-6" />
-            <div className="h-8 w-40 bg-zinc-300/40 rounded-xl mb-4" />
-            <div className="h-10 w-32 bg-zinc-300/40 rounded-xl mb-8" />
+            <div className="h-4 w-20 bg-zinc-300/40 dark:bg-zinc-700/40 rounded-full mb-6" />
+            <div className="h-8 w-40 bg-zinc-300/40 dark:bg-zinc-700/40 rounded-xl mb-4" />
+            <div className="h-10 w-32 bg-zinc-300/40 dark:bg-zinc-700/40 rounded-xl mb-8" />
             <div className="space-y-3">
-              <div className="h-4 w-full bg-zinc-200/40 rounded-full" />
-              <div className="h-4 w-5/6 bg-zinc-200/40 rounded-full" />
-              <div className="h-4 w-4/6 bg-zinc-200/40 rounded-full" />
+              <div className="h-4 w-full bg-zinc-200/40 dark:bg-zinc-800/60 rounded-full" />
+              <div className="h-4 w-5/6 bg-zinc-200/40 dark:bg-zinc-800/60 rounded-full" />
+              <div className="h-4 w-4/6 bg-zinc-200/40 dark:bg-zinc-800/60 rounded-full" />
             </div>
           </div>
         ))}
@@ -64,11 +66,11 @@ export const SkeletonPortfolio: React.FC = () => {
   return (
     <div className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="space-y-4 mb-12">
-        <div className="h-6 w-36 bg-zinc-200 rounded-full animate-pulse" />
-        <div className="h-12 w-64 bg-zinc-200 rounded-2xl animate-pulse" />
+        <div className="h-6 w-36 bg-zinc-200 dark:bg-zinc-800 rounded-full animate-pulse" />
+        <div className="h-12 w-64 bg-zinc-200 dark:bg-zinc-800 rounded-2xl animate-pulse" />
         <div className="flex gap-2 pt-4">
           {[1, 2, 3, 4].map((n) => (
-            <div key={n} className="h-9 w-28 bg-zinc-200 rounded-full animate-pulse" />
+            <div key={n} className="h-9 w-28 bg-zinc-200 dark:bg-zinc-800 rounded-full animate-pulse" />
           ))}
         </div>
       </div>

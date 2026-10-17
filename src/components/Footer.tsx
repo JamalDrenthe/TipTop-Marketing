@@ -23,10 +23,10 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="flex flex-col sm:flex-row items-center gap-6 text-center sm:text-left">
             <button
               onClick={() => onNavigate('home')}
-              className="text-left focus:outline-none block shrink-0"
+              className="text-left focus:outline-none block shrink-0 cursor-pointer"
               aria-label="TipTop Marketing Home"
             >
-              <TipTopLogo size={48} showText={true} textColor="text-white" />
+              <TipTopLogo size={48} showText={true} forceDarkBg={true} />
             </button>
             <p className="text-xs text-zinc-400 max-w-md leading-relaxed">
               {t('footerDesc')}
@@ -69,16 +69,16 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Navigation & Legal */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400">
           <nav className="flex items-center gap-6 font-medium">
-            <button onClick={() => onNavigate('home')} className="hover:text-white transition">
+            <button onClick={() => onNavigate('home')} className="hover:text-white transition cursor-pointer">
               {t('navHome')}
             </button>
-            <button onClick={() => onNavigate('pakketten')} className="hover:text-white transition">
+            <button onClick={() => onNavigate('pakketten')} className="hover:text-white transition cursor-pointer">
               {t('navPackages')}
             </button>
-            <button onClick={() => onNavigate('portfolio')} className="hover:text-white transition">
+            <button onClick={() => onNavigate('portfolio')} className="hover:text-white transition cursor-pointer">
               {t('navPortfolio')}
             </button>
-            <button onClick={() => onNavigate('contact')} className="hover:text-white transition">
+            <button onClick={() => onNavigate('contact')} className="hover:text-white transition cursor-pointer">
               {t('navContact')}
             </button>
           </nav>
@@ -86,13 +86,13 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="flex items-center gap-6">
             <button
               onClick={() => onOpenLegal('voorwaarden')}
-              className="hover:text-white underline underline-offset-4 transition"
+              className="hover:text-white underline underline-offset-4 transition cursor-pointer"
             >
               {t('footerLegalVoorwaarden')}
             </button>
             <button
               onClick={() => onOpenLegal('privacy')}
-              className="hover:text-white underline underline-offset-4 transition"
+              className="hover:text-white underline underline-offset-4 transition cursor-pointer"
             >
               {t('footerLegalPrivacy')}
             </button>

@@ -1,8 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      try {
+        var stored = localStorage.getItem('tiptop-theme');
+        var isDark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.toggle('dark', isDark);
+        document.querySelector('meta[name="color-scheme"]').content = stored || 'light dark';
+      } catch (e) {}
+    </script>
     <title>TipTop Marketing — High-Volume Content & Growth Agency</title>
     <meta name="description" content="High-end marketingbureau gespecialiseerd in high-volume videoproductie, full social management, speciale shoots en converterende websites & webshops." />
     <meta property="og:title" content="TipTop Marketing — High-Volume Content & Growth Agency" />
@@ -18,4 +27,3 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

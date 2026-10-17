@@ -1,4 +1,24 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light dark;
+  --scrollbar-track: #f4f4f5;
+  --scrollbar-thumb: #a1a1aa;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+
+  &:has(> head > meta[name="color-scheme"][content="dark"]),
+  &.dark {
+    color-scheme: dark;
+    --scrollbar-track: #09090b;
+    --scrollbar-thumb: #3f3f46;
+  }
+
+  &:has(> head > meta[name="color-scheme"][content="light"]):not(.dark) {
+    color-scheme: light;
+  }
+}
 
 @layer base {
   body {
@@ -6,54 +26,17 @@
     color: #18181b;
     background-color: #ffffff;
     overflow-x: hidden;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  html.dark body {
+    color: #f4f4f5;
+    background-color: #09090B;
   }
 
   h1, h2, h3, .font-serif {
     font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
   }
-}
-
-/* Dark Mode Deep Background & Text Overrides */
-html.dark body {
-  color: #f4f4f5;
-  background-color: #09090B;
-}
-
-html.dark .bg-white {
-  background-color: #09090B;
-}
-
-html.dark .bg-zinc-50 {
-  background-color: #121215;
-}
-
-html.dark .bg-zinc-100 {
-  background-color: #18181b;
-}
-
-html.dark .text-zinc-900 {
-  color: #ffffff;
-}
-
-html.dark .text-zinc-800 {
-  color: #f4f4f5;
-}
-
-html.dark .text-zinc-700 {
-  color: #e4e4e7;
-}
-
-html.dark .text-zinc-600 {
-  color: #a1a1aa;
-}
-
-html.dark .border-zinc-200 {
-  border-color: #27272a;
-}
-
-html.dark .border-zinc-300 {
-  border-color: #3f3f46;
 }
 
 /* Custom luxury subtle grid backgrounds */
@@ -92,17 +75,40 @@ html.dark .bg-light-grid {
   background: linear-gradient(135deg, #DFC282 0%, #EFE1BF 50%, #B8964C 100%);
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 7px;
+/* Smooth Infinite Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
-::-webkit-scrollbar-track {
-  background: #09090b;
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
 }
-::-webkit-scrollbar-thumb {
-  background: #27272a;
-  border-radius: 4px;
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #C6A868;
+
+/* Legacy fallback for WebKit/Blink browsers that do not support standard scrollbar-color */
+@supports not (scrollbar-color: auto) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C6A868;
+  }
 }

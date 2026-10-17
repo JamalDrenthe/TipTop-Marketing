@@ -1,24 +1,32 @@
 import React from 'react';
+import { useTheme } from '../context/ThemeContext.tsx';
 
 interface TipTopLogoProps {
   className?: string;
   size?: number;
   showText?: boolean;
-  textColor?: string;
+  forceDarkBg?: boolean;
 }
 
 export const TipTopLogo: React.FC<TipTopLogoProps> = ({
   className = '',
   size = 56,
   showText = false,
-  textColor = 'text-zinc-900'
+  forceDarkBg = false,
 }) => {
+  const { theme } = useTheme();
+  const isOnDark = forceDarkBg || theme === 'dark';
+
   return (
     <div className={`flex items-center gap-3.5 select-none ${className}`}>
       {/* Circular Emblem recreating the uploaded TipTop Marketing Logo */}
       <div
         style={{ width: size, height: size }}
-        className="relative rounded-full bg-white border border-zinc-200/80 shadow-sm flex items-center justify-center p-1 shrink-0 overflow-hidden"
+        className={`relative rounded-full bg-white flex items-center justify-center p-1 shrink-0 overflow-hidden transition-all duration-300 ${
+          isOnDark
+            ? 'border border-[#C6A868]/50 shadow-[0_0_20px_rgba(198,168,104,0.18)]'
+            : 'border border-zinc-200/90 shadow-sm'
+        }`}
         title="TipTop Marketing Logo"
       >
         <svg
@@ -91,11 +99,21 @@ export const TipTopLogo: React.FC<TipTopLogoProps> = ({
 
       {showText && (
         <div className="flex flex-col text-left">
-          <span className={`font-serif font-bold text-xl sm:text-2xl tracking-wider leading-none ${textColor}`}>
+          <span
+            style={{ color: isOnDark ? '#FFFFFF' : '#09090B' }}
+            className={`font-serif font-bold text-xl sm:text-2xl tracking-wider leading-none transition-colors duration-200 ${
+              forceDarkBg ? 'text-white' : 'text-zinc-950 dark:text-white'
+            }`}
+          >
             TIP-TOP
           </span>
           <div className="flex items-center gap-1.5 mt-1">
-            <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-zinc-500 font-medium">
+            <span
+              style={{ color: isOnDark ? '#D4D4D8' : '#52525B' }}
+              className={`text-[10px] sm:text-[11px] uppercase tracking-[0.28em] font-semibold transition-colors duration-200 ${
+                forceDarkBg ? 'text-zinc-300' : 'text-zinc-600 dark:text-zinc-300'
+              }`}
+            >
               MARKETING
             </span>
             <span className="text-[9px] text-[#C6A868]">✦</span>
