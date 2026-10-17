@@ -1,5 +1,6 @@
 import React from 'react';
 import { TipTopLogo } from './TipTopLogo.tsx';
+import { InteractiveHeroLogo } from './InteractiveHeroLogo.tsx';
 import { PACKAGES, PackageTier } from '../utils/pricing.ts';
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn.tsx';
 import { useLanguage } from '../context/LanguageContext.tsx';
@@ -124,11 +125,9 @@ export const HomePage: React.FC<HomePageProps> = ({
                     </span>
                   </div>
 
-                  {/* Logo Emblem */}
-                  <div className="my-8 flex justify-center">
-                    <div className="p-3 rounded-full bg-white ring-8 ring-[#C6A868]/20 shadow-2xl">
-                      <TipTopLogo size={180} showText={false} />
-                    </div>
+                  {/* Interactive 3D Logo Emblem */}
+                  <div className="my-6 flex justify-center">
+                    <InteractiveHeroLogo />
                   </div>
 
                   {/* Key Deliverables */}

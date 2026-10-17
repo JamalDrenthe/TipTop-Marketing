@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext.tsx';
 
 interface TipTopLogoProps {
@@ -6,6 +7,7 @@ interface TipTopLogoProps {
   size?: number;
   showText?: boolean;
   forceDarkBg?: boolean;
+  interactive?: boolean;
 }
 
 export const TipTopLogo: React.FC<TipTopLogoProps> = ({
@@ -13,19 +15,26 @@ export const TipTopLogo: React.FC<TipTopLogoProps> = ({
   size = 56,
   showText = false,
   forceDarkBg = false,
+  interactive = true,
 }) => {
   const { theme } = useTheme();
   const isOnDark = forceDarkBg || theme === 'dark';
 
   return (
-    <div className={`flex items-center gap-3.5 select-none ${className}`}>
+    <motion.div
+      whileHover={interactive ? { scale: 1.03 } : undefined}
+      whileTap={interactive ? { scale: 0.96 } : undefined}
+      className={`flex items-center gap-3.5 select-none ${className}`}
+    >
       {/* Circular Emblem recreating the uploaded TipTop Marketing Logo */}
-      <div
+      <motion.div
+        whileHover={interactive ? { rotate: [0, -3, 3, 0] } : undefined}
+        transition={{ duration: 0.4 }}
         style={{ width: size, height: size }}
         className={`relative rounded-full bg-white flex items-center justify-center p-1 shrink-0 overflow-hidden transition-all duration-300 ${
           isOnDark
-            ? 'border border-[#C6A868]/50 shadow-[0_0_20px_rgba(198,168,104,0.18)]'
-            : 'border border-zinc-200/90 shadow-sm'
+            ? 'border border-[#C6A868]/50 shadow-[0_0_20px_rgba(198,168,104,0.18)] hover:shadow-[0_0_26px_rgba(198,168,104,0.4)] hover:border-[#C6A868]'
+            : 'border border-zinc-200/90 shadow-sm hover:border-[#C6A868]/70 hover:shadow-md'
         }`}
         title="TipTop Marketing Logo"
       >
@@ -95,7 +104,7 @@ export const TipTopLogo: React.FC<TipTopLogoProps> = ({
           />
           <line x1="131" y1="203" x2="184" y2="203" stroke="#09090B" strokeWidth="1.5" />
         </svg>
-      </div>
+      </motion.div>
 
       {showText && (
         <div className="flex flex-col text-left">
@@ -116,10 +125,16 @@ export const TipTopLogo: React.FC<TipTopLogoProps> = ({
             >
               MARKETING
             </span>
-            <span className="text-[9px] text-[#C6A868]">✦</span>
+            <motion.span
+              animate={interactive ? { rotate: [0, 90, 0] } : undefined}
+              transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
+              className="text-[9px] text-[#C6A868] inline-block"
+            >
+              ✦
+            </motion.span>
           </div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
