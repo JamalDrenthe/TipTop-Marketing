@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <defs>
+    <linearGradient id="goldRim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8D8B0" />
+      <stop offset="50%" stop-color="#C6A868" />
+      <stop offset="100%" stop-color="#8C6D2D" />
+    </linearGradient>
+  </defs>
+  <!-- Outer Gold Rim -->
+  <circle cx="120" cy="120" r="118" fill="#09090B" stroke="url(#goldRim)" stroke-width="4" />
+  <!-- Inner White Disc -->
+  <circle cx="120" cy="120" r="108" fill="#FFFFFF" />
+  <!-- Left T -->
+  <path d="M 73 48 L 132 48 L 134 68 L 131 68 C 129 56 124 53 114 53 L 109 53 L 109 112 C 109 120 112 123 121 124 L 121 127 L 85 127 L 85 124 C 94 123 97 120 97 112 L 97 53 L 91 53 C 81 53 76 56 74 68 L 71 68 Z" fill="#09090B" />
+  <!-- White gap -->
+  <path d="M 94 96 L 112 85 L 112 94 L 94 105 Z" fill="#FFFFFF" />
+  <!-- Right T -->
+  <path d="M 134 76 L 146 70 L 146 121 C 146 129 149 132 158 133 L 158 136 L 122 136 L 122 133 C 131 132 134 129 134 121 Z" fill="#09090B" />
+  <!-- Swoosh -->
+  <path d="M 74 108 C 92 105 110 92 130 78 C 146 67 160 63 173 63 L 176 84 L 173 84 C 169 72 162 67 150 68 C 137 69 121 79 105 90 C 92 99 82 106 74 108 Z" fill="#09090B" />
+  <!-- Typography TIP-TOP -->
+  <text x="120" y="166" text-anchor="middle" font-family="Georgia, 'Playfair Display', serif" font-weight="bold" font-size="32" letter-spacing="2.5" fill="#09090B">TIP-TOP</text>
+  <!-- Typography MARKETING -->
+  <text x="122" y="190" text-anchor="middle" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="600" font-size="14" letter-spacing="7" fill="#18181B">MARKETING</text>
+  <!-- Hairline Dividers and Star -->
+  <line x1="56" y1="203" x2="109" y2="203" stroke="#09090B" stroke-width="1.5" />
+  <path d="M 120 195 Q 120 203 128 203 Q 120 203 120 211 Q 120 203 112 203 Q 120 203 120 195 Z" fill="#C6A868" />
+  <line x1="131" y1="203" x2="184" y2="203" stroke="#09090B" stroke-width="1.5" />
+</svg>
