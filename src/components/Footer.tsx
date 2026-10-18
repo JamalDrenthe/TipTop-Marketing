@@ -1,16 +1,19 @@
 import React from 'react';
 import { TipTopLogo } from './TipTopLogo.tsx';
 import { useLanguage } from '../context/LanguageContext.tsx';
+import { Lock } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
   onSelectPackage: (tier: any) => void;
   onOpenLegal: (type: 'voorwaarden' | 'privacy') => void;
+  onLock?: () => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({
   onNavigate,
-  onOpenLegal
+  onOpenLegal,
+  onLock
 }) => {
   const { t } = useLanguage();
 
@@ -93,6 +96,16 @@ export const Footer: React.FC<FooterProps> = ({
             >
               {t('footerLegalPrivacy')}
             </button>
+            {onLock && (
+              <button
+                onClick={onLock}
+                title="Vergrendel website"
+                className="hover:text-[#C6A868] transition cursor-pointer flex items-center gap-1.5 text-zinc-400 hover:text-white"
+              >
+                <Lock className="w-3.5 h-3.5 text-[#C6A868]" />
+                <span>Vergrendelen</span>
+              </button>
+            )}
           </div>
         </div>
       </div>

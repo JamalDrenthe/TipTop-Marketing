@@ -13,8 +13,17 @@ import { ScrollProgressBar } from './components/ScrollProgressBar.tsx';
 import { SkeletonHero, SkeletonPricing } from './components/SkeletonLoader.tsx';
 import { PackageTier } from './utils/pricing.ts';
 import { CustomCursor } from './components/CustomCursor.tsx';
+import { PasswordGate } from './components/PasswordGate.tsx';
 
 function AppContent() {
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem('tiptop_site_auth') === 'SalesMates';
+    } catch {
+      return false;
+    }
+  });
+
   const [activePage, setActivePage] = useState<string>('home');
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
   const [selectedPackageForContact, setSelectedPackageForContact] = useState<PackageTier | ''>('');
@@ -92,6 +101,10 @@ function AppContent() {
     }
   };
 
+  if (!isAuthenticated) {
+    return <PasswordGate onUnlock={() => setIsAuthenticated(true)} />;
+  }
+
   return (
     <div className="min-h-screen bg-white dark:bg-[#09090B] text-zinc-900 dark:text-zinc-100 font-sans antialiased selection:bg-zinc-900 selection:text-white dark:selection:bg-white dark:selection:text-zinc-900 flex flex-col transition-colors">
       {/* Custom Cursor Follower */}
@@ -119,6 +132,12 @@ function AppContent() {
         onNavigate={handleNavigate}
         onSelectPackage={handleSelectPackage}
         onOpenLegal={(type) => setLegalModalType(type)}
+        onLock={() => {
+          try {
+            localStorage.removeItem('tiptop_site_auth');
+          } catch {}
+          setIsAuthenticated(false);
+        }}
       />
 
       {/* Interactive Modals */}

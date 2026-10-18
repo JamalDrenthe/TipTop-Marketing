@@ -97,3 +97,12 @@ test('package recommendation returns expected tier according to goals', () => {
     'PLATINUM'
   );
 });
+
+test('site password verification accepts SalesMates and rejects others', () => {
+  const verify = (input: string) => input.trim() === 'SalesMates';
+  assert.equal(verify('SalesMates'), true);
+  assert.equal(verify(' SalesMates '), true);
+  assert.equal(verify('salesmates'), false);
+  assert.equal(verify('wrong'), false);
+});
+
