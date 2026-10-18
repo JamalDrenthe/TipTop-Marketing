@@ -90,8 +90,8 @@ export const PACKAGES: Package[] = [
       "Contact & DM management",
       "Custom Website"
     ],
-    bestFor: 'Merken die volledige markt dominantie willen: meer video, fotografie, actieve DM opvolging en een high end website.',
-    bestForEn: 'Ambitious brands seeking complete market dominance: higher video volume, photography, active DM lead management, and a custom website.'
+    bestFor: 'Merken die structureel willen opschalen met een complete merkuitstraling: meer video, fotografie, actieve DM-opvolging en een maatwerk website.',
+    bestForEn: 'Brands scaling systematically: higher monthly video output, editorial photography, active DM lead handling, and a custom website.'
   },
   {
     id: 'GOAT',
@@ -131,8 +131,8 @@ export const PACKAGES: Package[] = [
       "Custom Website",
       "Full E-Commerce Webshop"
     ],
-    bestFor: 'Gevestigde spelers en e commerce merken: maximale video en fotoproductie met complete converterende webshop.',
-    bestForEn: 'Market leaders and e-commerce brands: maximum video and photo output paired with a high-converting custom webshop.'
+    bestFor: 'Gevestigde merken en e-commerce bedrijven: maximale maandelijkse video- en fotoproductie met een complete, converterende webshop.',
+    bestForEn: 'Established brands and e-commerce businesses: maximum monthly video and photo output paired with a high-converting custom webshop.'
   }
 ];
 
@@ -180,8 +180,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
       productionOutput: '20 videos + 18 photos /mo',
       growthOrConversion: '+410% E-Commerce Revenue'
     },
-    description: 'Volledige social dominantie campagne met 20 maandelijkse short form producties, editorial fotoshoots en een ultra snelle webshop geoptimaliseerd voor hoge conversie.',
-    descriptionEn: 'Full social dominance campaign featuring 20 monthly short-form video productions, editorial photoshoots, and an ultra-fast custom webshop built for conversion.',
+    description: 'Compleet social productietraject met 20 maandelijkse video producties, editorial fotoshoots en een snelle webshop gebouwd voor maximale conversie.',
+    descriptionEn: 'End-to-end monthly social production with 20 videos, editorial photo shoots, and a fast storefront built for high conversion.',
     accentColor: '#C6A868'
   },
   {
@@ -203,8 +203,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
       productionOutput: '16 cinema-grade videos /mo',
       growthOrConversion: '48 Direct Showroom Leads/mo'
     },
-    description: 'Cinematische videoformaten op locatie gecombineerd met snelle virale short form edits, actief DM contactmanagement en een interactieve showroom website.',
-    descriptionEn: 'On-location cinematic automotive productions combined with viral short-form edits, proactive DM lead management, and an interactive digital showroom website.',
+    description: 'Cinematische producties op locatie gecombineerd met gerichte short form formats, actief DM contactmanagement en een interactieve showroom website.',
+    descriptionEn: 'On-location cinematic automotive productions combined with focused short-form formats, active DM lead management, and an interactive digital showroom website.',
     accentColor: '#FFFFFF'
   },
   {

@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { TipTopLogo } from './TipTopLogo.tsx';
 import { useLanguage } from '../context/LanguageContext.tsx';
-import { Sparkles } from 'lucide-react';
 
 interface SparkleParticle {
   id: number;
@@ -47,7 +46,7 @@ export const InteractiveHeroLogo: React.FC = () => {
   };
 
   const triggerSparkles = () => {
-    const chars = ['✦', '★', '✧', '✦', '✦'];
+    const chars = ['•', '·', '✦', '·', '•'];
     const newSparkles: SparkleParticle[] = Array.from({ length: 10 }).map((_, i) => {
       const angle = (i / 10) * Math.PI * 2 + (Math.random() * 0.4 - 0.2);
       const distance = 90 + Math.random() * 55;
@@ -171,7 +170,7 @@ export const InteractiveHeroLogo: React.FC = () => {
               {/* Medallion Content */}
               <div className="relative z-10 flex flex-col items-center justify-center space-y-1">
                 <span className="text-[9px] uppercase tracking-[0.25em] text-[#C6A868] font-bold">
-                  ✦ TIPTOP FORMULA ✦
+                  TIPTOP MARKETING
                 </span>
 
                 <span className="font-serif text-3xl font-bold gold-gradient-text tracking-wider">
@@ -189,9 +188,8 @@ export const InteractiveHeroLogo: React.FC = () => {
                 </p>
 
                 <div className="pt-1.5">
-                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#C6A868]/15 border border-[#C6A868]/30 text-[9px] text-[#C6A868] font-semibold tracking-wider uppercase">
-                    <Sparkles className="w-2.5 h-2.5" />
-                    <span>{isEn ? 'Top Tier Growth' : 'High Volume'}</span>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-[#C6A868]/15 border border-[#C6A868]/30 text-[9px] text-[#C6A868] font-semibold tracking-wider uppercase">
+                    <span>HIGH OUTPUT RETAINER</span>
                   </span>
                 </div>
               </div>

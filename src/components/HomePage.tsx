@@ -4,7 +4,7 @@ import { InteractiveHeroLogo } from './InteractiveHeroLogo.tsx';
 import { PACKAGES, PackageTier } from '../utils/pricing.ts';
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn.tsx';
 import { useLanguage } from '../context/LanguageContext.tsx';
-import { ArrowRight, Sparkles, Video, Share2, Wand2, Laptop, Check, Crown } from 'lucide-react';
+import { ArrowRight, Calendar, Video, Share2, Wand2, Laptop, Check, Crown } from 'lucide-react';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;
@@ -43,7 +43,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
               <FadeIn direction="up" delay={0.1}>
                 <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/5 border border-white/15 backdrop-blur-sm">
-                  <Sparkles className="w-3.5 h-3.5 text-[#C6A868]" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C6A868]" />
                   <span className="text-xs uppercase tracking-[0.22em] text-zinc-300 font-medium">
                     {t('heroBadge')}
                   </span>
@@ -78,7 +78,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     onClick={() => onOpenStrategyModal()}
                     className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 text-white border border-white/20 font-semibold text-xs uppercase tracking-widest hover:bg-white/10 hover:border-[#C6A868] transition-all duration-300 flex items-center justify-center gap-2.5 backdrop-blur-md cursor-pointer"
                   >
-                    <Sparkles className="w-4 h-4 text-[#C6A868]" />
+                    <Calendar className="w-4 h-4 text-[#C6A868]" />
                     <span>{t('heroCtaStrategy')}</span>
                   </button>
                 </div>
@@ -114,8 +114,8 @@ export const HomePage: React.FC<HomePageProps> = ({
               <FadeIn direction="left" delay={0.3}>
                 <div className="relative w-full max-w-md rounded-3xl bg-zinc-900/90 border border-white/15 p-8 shadow-2xl backdrop-blur-xl">
                   <div className="flex items-center justify-between pb-6 border-b border-white/10">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <div className="flex items-center gap-2.5">
+                      <span className="w-2 h-2 rounded-full bg-[#C6A868]" />
                       <span className="text-xs uppercase tracking-widest text-zinc-300 font-medium">
                         {t('emblemTitle')}
                       </span>
@@ -166,7 +166,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               key={idx}
               className="mx-8 text-xs uppercase tracking-[0.28em] text-zinc-400 font-medium whitespace-nowrap flex items-center gap-3"
             >
-              <span className="text-[#C6A868]">✦</span>
+              <span className="text-[#C6A868] opacity-75">·</span>
               <span>{item}</span>
             </span>
           ))}
@@ -291,7 +291,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   >
                     {isFeatured && (
                       <div className="absolute -top-4 left-1/2 -translate-x-1/2 metallic-badge text-[#09090B] text-[11px] font-extrabold uppercase tracking-[0.2em] px-5 py-1.5 rounded-full shadow-md whitespace-nowrap">
-                        ✦ {badge}
+                        {badge}
                       </div>
                     )}
 

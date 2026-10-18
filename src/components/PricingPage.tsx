@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PACKAGES, PackageTier } from '../utils/pricing.ts';
 import { FadeIn, StaggerContainer, StaggerItem } from './FadeIn.tsx';
 import { useLanguage } from '../context/LanguageContext.tsx';
-import { Check, Crown, Sparkles, ArrowRight } from 'lucide-react';
+import { Check, Crown, ArrowRight } from 'lucide-react';
 
 interface PricingPageProps {
   onSelectPackage: (tier: PackageTier) => void;
@@ -22,8 +22,8 @@ export const PricingPage: React.FC<PricingPageProps> = ({
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
         <FadeIn direction="up">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs uppercase tracking-widest font-semibold mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-[#C6A868]" />
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200/80 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 text-xs uppercase tracking-widest font-semibold mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#C6A868]" />
             <span>{t('packagesTag')}</span>
           </div>
           <h1 className="font-serif text-4xl sm:text-6xl font-bold text-zinc-900 dark:text-white tracking-tight">
@@ -98,13 +98,13 @@ export const PricingPage: React.FC<PricingPageProps> = ({
                 >
                   {isFeatured && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 metallic-badge text-[#09090B] text-[11px] font-extrabold uppercase tracking-[0.2em] px-5 py-1.5 rounded-full shadow-md whitespace-nowrap">
-                      ✦ {badge}
+                      {badge}
                     </div>
                   )}
 
                   {!isFeatured && isSelected && (
                     <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#09090B] dark:bg-white text-[#C6A868] dark:text-[#09090B] border border-[#C6A868]/40 text-[10px] font-bold uppercase tracking-[0.18em] px-4 py-1 rounded-full shadow-sm whitespace-nowrap">
-                      ✦ {t('packagesRecommendedBadge')}
+                      {t('packagesRecommendedBadge')}
                     </div>
                   )}
 
@@ -257,7 +257,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({
                       </span>
                     </th>
                     <th className="p-6 text-center font-serif text-lg font-bold text-[#C6A868] bg-zinc-900 border-x border-zinc-800 w-1/5">
-                      PREMIUM ✦
+                      PREMIUM
                       <span className="block font-sans text-xs font-normal text-zinc-300 mt-0.5">
                         {isEn ? '€2,450 to €3,000 /mo' : '€2.450 tot €3.000 p/m'}
                       </span>
